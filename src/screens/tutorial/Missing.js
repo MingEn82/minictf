@@ -6,7 +6,7 @@ export default function Tutorial7(props) {
     <div style={{ margin: 20 }}>
       <p>
         Hi, this page doesnt exist. Click{" "}
-        <a href="https://settlersofyang.netlify.app/tutorial/welcome">here </a>
+        <a href="https://settlersofyang-test.netlify.app/tutorial/welcome">here </a>
         to go to where you started.
       </p>
     </div>
