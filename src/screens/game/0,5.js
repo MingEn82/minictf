@@ -32,26 +32,26 @@ export default function TutorialMain() {
   }
 
   async function checkPassword() {
+    var flag = 1
     for (var i = 0; i < buttons.length; i++) {
-      if (i === 0 || i === 3 || i === 4 || i === 9 || i === 11) {
-        if (!buttons[i].toggle) {
-          setMessage("Incorrect Password! Try Again!");
-          await sleep(2000);
-          setMessage("");
-          break;
-        }
-      } else {
-        if (buttons[i].toggle) {
-          setMessage("Incorrect Password! Try Again!");
-          await sleep(2000);
-          setMessage("");
-          break;
-        }
+      if ((i === 0 || i === 3 || i === 4 || i === 9 || i === 11) && !buttons[i].toggle) {
+        flag = 0;
+        break;
+      } else if (buttons[i].toggle) {
+        flag = 0;
+        break;
       }
     }
-    navigate(
-      "../6cbf40494f64db7248d7d4d7737f772d6f80941cb93389b49d4321487328acb8"
-    );
+    if (flag) {
+      navigate(
+        "../6cbf40494f64db7248d7d4d7737f772d6f80941cb93389b49d4321487328acb8"
+      );
+    } else {
+      setMessage("Incorrect Password! Try Again!");
+      await sleep(2000);
+      setMessage("");
+    }
+    
   }
 
   function createButtons() {
