@@ -10,7 +10,7 @@ export default function Tutorial1(props) {
       </p>
       <p>
         Here's a freebie for you. The next page's link is /r0undtw0 - as in
-        https://settlersofyang.netlify.app/tutorial/r0undtw0.
+        https://{window.location.href.split('/')[2]}/tutorial/r0undtw0.
       </p>
       <p>
         Access to new pages will be in the form of either clickable links, or
