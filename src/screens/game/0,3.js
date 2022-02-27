@@ -2,46 +2,15 @@
 // Map for (0,3)
 
 import React from "react";
+import { South, East, West } from "../../common/MapLinks";
 
 export default function TutorialMain() {
   return (
     <div>
-      <a
-        style={{
-          position: "absolute",
-          bottom: 10,
-          left: "50%",
-          fontSize: "1.5em",
-          transform: "translate(-50%, 0)",
-        }}
-        href="./c9f18ad656657e24402c8e968a43bec1b01ca56731425f8b4426d622d9dc5dfa"
-      >
-        South
-      </a>
-      <a
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: 10,
-          fontSize: "1.5em",
-          transform: "translate(0, -50%)",
-        }}
-        href="./14136a2a13125ae9aa5ff017e657a0e8ea00af064a8de5fadf105c21136045e5"
-      >
-        West
-      </a>
-      <a
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: 10,
-          fontSize: "1.5em",
-          transform: "translate(0, -50%)",
-        }}
-        href="./4c6617b306ad9c78e25313ffa5ca203b97107c6afc90d6323aaa9c5b86ae2809"
-      >
-        East
-      </a>
+      <South href={"./c9f18ad656657e24402c8e968a43bec1b01ca56731425f8b4426d622d9dc5dfa"} />
+      <West href={"./14136a2a13125ae9aa5ff017e657a0e8ea00af064a8de5fadf105c21136045e5"} />
+      <East href={"./4c6617b306ad9c78e25313ffa5ca203b97107c6afc90d6323aaa9c5b86ae2809"} />
+
       <div
         style={{
           position: "absolute",

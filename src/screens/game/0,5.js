@@ -4,6 +4,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { South, West } from "../../common/MapLinks";
 
 export default function TutorialMain() {
   const navigate = useNavigate();
@@ -24,34 +25,43 @@ export default function TutorialMain() {
   }
 
   function toggle(id) {
-    setButtons(button => {
-      return button.map(item => {
-        return item.id === id ? {...item, toggle: !item.toggle} : item
+    setButtons(buttons => {
+      return buttons.map(button => {
+        return button.id === id ? {...button, toggle: !button.toggle} : button;
+      })
+    })
+  }
+
+  function reset() {
+    setButtons(buttons => {
+      return buttons.map(button => {
+        return button.toggle ? {...button, toggle: !button.toggle} : button;
       })
     })
   }
 
   async function checkPassword() {
-    var flag = 1
+    var flag = 1;
     for (var i = 0; i < buttons.length; i++) {
       if ((i === 0 || i === 3 || i === 4 || i === 9 || i === 11) && !buttons[i].toggle) {
         flag = 0;
         break;
-      } else if (buttons[i].toggle) {
+      } else if ((i !== 0 && i !== 3 && i !== 4 && i !== 9 && i !== 11) && buttons[i].toggle) {
         flag = 0;
         break;
       }
     }
+    // console.log("flag", flag);
     if (flag) {
       navigate(
         "../6cbf40494f64db7248d7d4d7737f772d6f80941cb93389b49d4321487328acb8"
       );
     } else {
       setMessage("Incorrect Password! Try Again!");
-      await sleep(2000);
+      await sleep(1500);
+      reset();
       setMessage("");
     }
-    
   }
 
   function createButtons() {
@@ -62,6 +72,7 @@ export default function TutorialMain() {
         id={number} 
         onClick={() => toggle(number)}
         style={{...styles, backgroundColor: buttons[number].toggle ? "green" : "white"}}
+        key={number}
       >
         {number}
       </button>
@@ -70,30 +81,9 @@ export default function TutorialMain() {
 
   return (
     <div>
-      <a
-        style={{
-          position: "absolute",
-          bottom: 10,
-          left: "50%",
-          fontSize: "1.5em",
-          transform: "translate(-50%, 0)",
-        }}
-        href="./c5620637b414f9ee28f9276290f23687047abd02696185fd4253061a16a3847c"
-      >
-        South
-      </a>
-      <a
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: 10,
-          fontSize: "1.5em",
-          transform: "translate(0, -50%)",
-        }}
-        href="./4c6617b306ad9c78e25313ffa5ca203b97107c6afc90d6323aaa9c5b86ae2809"
-      >
-        West
-      </a>
+      <South href={"./c5620637b414f9ee28f9276290f23687047abd02696185fd4253061a16a3847c"} />
+      <West href={"./4c6617b306ad9c78e25313ffa5ca203b97107c6afc90d6323aaa9c5b86ae2809"} />
+      
       <div
         style={{
           position: "absolute",

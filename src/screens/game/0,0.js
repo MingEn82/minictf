@@ -2,34 +2,14 @@
 // Map for (0,0)
 
 import React from "react";
+import { South, East } from "../../common/MapLinks";
 
 export default function TutorialMain() {
   return (
     <div>
-      <a
-        style={{
-          position: "absolute",
-          bottom: 10,
-          left: "50%",
-          fontSize: "1.5em",
-          transform: "translate(-50%, 0)",
-        }}
-        href="./fe2267d9198219da887760a0f36389966c7c4d745613ecde9a4924d181059aec"
-      >
-        South
-      </a>
-      <a
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: 10,
-          fontSize: "1.5em",
-          transform: "translate(0, -50%)",
-        }}
-        href="./8b12122a6833284482026d67cfa484c58fd0ff536fadc5db0bce9cef41ab990c"
-      >
-        East
-      </a>
+      <South href={"./fe2267d9198219da887760a0f36389966c7c4d745613ecde9a4924d181059aec"} />
+      <East href={"./8b12122a6833284482026d67cfa484c58fd0ff536fadc5db0bce9cef41ab990c"} />
+
       <div
         style={{
           position: "absolute",
