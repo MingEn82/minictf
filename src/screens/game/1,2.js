@@ -66,6 +66,20 @@ export default function TutorialMain() {
       >
         <img src="/map/1,2.png" alt="map" height="30%" />
       </div>
+
+      <div 
+          style={{
+            position: "absolute", 
+            top: "50%", 
+            left: "50%", 
+            transform: "translate(-50%, -50%)",
+            color: "black",
+            // width: "70vw",
+          }}
+        >
+          <p>A beaten looking path splits into three</p>
+          <img src="/backgrounds/path2.jpg" alt="path2" styles={{width: "100%"}}/>
+        </div>
     </div>
   );
 }       

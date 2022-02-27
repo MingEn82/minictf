@@ -54,6 +54,19 @@ export default function TutorialMain() {
       >
         <img src="/map/0,2.png" alt="map" height="30%" />
       </div>
+      <div 
+          style={{
+            position: "absolute", 
+            top: "50%", 
+            left: "50%", 
+            transform: "translate(-50%, -50%)",
+            color: "black",
+          }}
+        >
+          <p>Theres nought here but a worn out path leading south</p>
+          <img src="/backgrounds/path1.jpg" alt="path1" styles={{width: "100%"}}/>
+        </div>
+        
     </div>
   );
 }       
